@@ -1,0 +1,12 @@
+{% include 'base/navbar.html' %}
+{% load crispy_forms_tags%}
+<div class="container align-content-center">
+    <h1>Please enter credentials to login </h1>
+    <form method="POST" class="form-group">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <br>
+        <button type="submit" class="btn btn-success">Login</button>
+        <p>Don't have an account? <a href="/register" style="text-decoration: none;">Register Here!</a></p>
+    </form>
+</div>
